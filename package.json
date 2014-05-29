@@ -1,0 +1,41 @@
+{
+  "name": "nested-layouts",
+  "description": "Recursively inject content into nested layouts.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/nested-layouts",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/nested-layouts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/nested-layouts/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/nested-layouts/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "layout",
+    "layouts",
+    "nested",
+    "stacked"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.18.2",
+    "verb": "~0.2.0"
+  }
+}
