@@ -7,22 +7,23 @@
 
 var expect = require('chai').expect;
 var utils = require('../lib/utils');
+var matter = require('gray-matter');
 var stack = require('../');
 
 var body = /\{{([\s\S]+?)}}/g;
 
-var data = function(str) {
-  var matter = /\<([\s\S]+?)>/g;
-  return str.match(matter)[0].match(/\w+/)[0];
+var fn = function(str) {
+  return {
+    layout: matter(str).data.layout || 'default',
+    content: matter(str).content.replace(/^\s*/, ''),
+    orig: matter(str).original
+  }
 };
 
-var fixture = utils.read('a');
-
-
 describe('when nested layouts are defined:', function () {
-  it('should recursively inject content from each file into its layout.', function () {
+  it('should recursively inject content from each file into its layout.', function (done) {
 
-    var actual = stack(fixture, body, data);
+    var actual = stack('test/fixtures/matter', 'a', body, fn);
     var expected = [
       'A above',
       'B above',
@@ -30,7 +31,9 @@ describe('when nested layouts are defined:', function () {
       'D above',
       'E above',
       'F above',
+      'Default!',
       '{{body}}',
+      'Default!',
       'F below',
       'E below',
       'D below',
@@ -40,6 +43,7 @@ describe('when nested layouts are defined:', function () {
     ].join('\n');
 
     expect(actual).to.eql(expected);
+    done();
   });
 });
 

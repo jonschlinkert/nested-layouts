@@ -37,5 +37,9 @@
     "chai": "~1.9.1",
     "mocha": "~1.18.2",
     "verb": "~0.2.0"
+  },
+  "dependencies": {
+    "delims": "^0.1.4",
+    "lodash": "^2.4.1"
   }
 }
