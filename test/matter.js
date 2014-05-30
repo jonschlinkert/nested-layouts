@@ -25,21 +25,21 @@ describe('when nested layouts are defined:', function () {
 
     var actual = stack('test/fixtures/matter', 'a', body, fn);
     var expected = [
-      'A above',
-      'B above',
-      'C above',
-      'D above',
-      'E above',
+      'Default!',
       'F above',
-      'Default!',
+      'E above',
+      'D above',
+      'C above',
+      'B above',
+      'A above',
       '{{body}}',
-      'Default!',
-      'F below',
-      'E below',
-      'D below',
-      'C below',
+      'A below',
       'B below',
-      'A below'
+      'C below',
+      'D below',
+      'E below',
+      'F below',
+      'Default!'
     ].join('\n');
 
     expect(actual).to.eql(expected);

@@ -15,8 +15,7 @@ var _ = require('lodash');
 
 module.exports = function(layouts, filepath, tag, fn) {
   var str = utils.read(layouts, filepath);
-  var original = str;
-  var stack = [], l = [];
+  var stack = [];
 
   stack.push(fn(str).content);
 
@@ -32,7 +31,12 @@ module.exports = function(layouts, filepath, tag, fn) {
     }
   }
 
-  return stack.reduce(function(a, b, c) {
+  var last = _.last(stack, 2);
+  if (last[0] === last[1]) {
+    stack.pop();
+  }
+
+  return _.reduce(stack.reverse(), function(a, b, c) {
     return a.replace(tag, b);
   });
 };

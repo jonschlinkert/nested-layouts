@@ -26,11 +26,11 @@ describe('when nested layouts are defined:', function () {
   it('should recursively inject content from each file into its layout.', function (done) {
     var actual = stack('test/fixtures/matter', 'f', body, fn);
     var expected = [
+      'Default!',
       'F above',
-      'Default!',
       '{{body}}',
-      'Default!',
-      'F below'
+      'F below',
+      'Default!'
     ].join('\n');
 
     expect(actual).to.eql(expected);
@@ -43,13 +43,13 @@ describe('when nested layouts are defined:', function () {
   it('should recursively inject content from each file into its layout.', function (done) {
     var actual = stack('test/fixtures/matter', 'e', body, fn);
     var expected = [
-      'E above',
+      'Default!',
       'F above',
-      'Default!',
+      'E above',
       '{{body}}',
-      'Default!',
+      'E below',
       'F below',
-      'E below'
+      'Default!'
     ].join('\n');
 
     expect(actual).to.eql(expected);
