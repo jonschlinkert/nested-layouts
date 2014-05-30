@@ -1,0 +1,23 @@
+
+[0m[0m
+[0m  when nested layouts are defined:[0m
+Default!
+F above
+E above
+D above
+C above
+B above
+A above
+{{body}}
+A below
+B below
+C below
+D below
+E below
+F below
+Default!
+  [31m  1) should recursively inject content from each file into its layout.[0m
+
+
+[92m [0m[32m 0 passing[0m[90m (21ms)[0m
+

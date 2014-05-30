@@ -39,7 +39,11 @@
     "verb": "~0.2.0"
   },
   "dependencies": {
+    "class-extend": "^0.1.1",
     "delims": "^0.1.4",
+    "expander": "^0.3.3",
+    "getobject": "^0.1.0",
+    "gray-matter": "^0.4.2",
     "lodash": "^2.4.1"
   }
 }

@@ -36,7 +36,7 @@ module.exports = function(layouts, filepath, tag, fn) {
     stack.pop();
   }
 
-  return _.reduce(stack.reverse(), function(a, b, c) {
+  return _.reduce(stack.reverse(), function(a, b) {
     return a.replace(tag, b);
   });
 };
